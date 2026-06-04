@@ -58,10 +58,5 @@ Grupo Nº 1
 7. Leonel Henriques Kandjuvi Bandi
 8. Martins Adriano Hungulo Mussinda
 
-## Docente
-
-Evaldo Chindele
-
 ## Ano
-
 2026
