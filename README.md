@@ -8,7 +8,7 @@ Trabalho da disciplina de Algoritmos e Estruturas de Dados.
 
 ## Descrição
 
-Este projeto implementa diferentes algoritmos de ordenação aplicados a um sistema de Quadro de Honra dos Estudantes.
+Este projeto implementa diferentes algoritmos de ordenação aplicados a um sistema de Quadro de Honra dos Estudantes, utilizando a linguagem Python.
 
 Os estudantes são classificados de acordo com as suas notas em ordem decrescente.  
 Após a ordenação, é apresentada a classificação geral dos estudantes.  
