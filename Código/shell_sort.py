@@ -7,7 +7,7 @@ def shell_sort(arr):
     n = len(arr)
     print(f"Entrada: {arr}")
 
-    gap = n // 2 # começa com metade do tamanho
+    gap = n // 2
     while gap > 0:
         print(f"\nGap = {gap}")
         for i in range(gap, n):
@@ -15,13 +15,13 @@ def shell_sort(arr):
             j = i
             while j >= gap and arr[j - gap] > temp:
                 comp += 1
-                arr[j] = arr[j - gap] # desloca
+                arr[j] = arr[j - gap] 
                 trocas += 1
                 j -= gap
             if j >= gap: comp += 1
             arr[j] = temp
             print(f"Insere {temp}: {arr}")
-        gap //= 2 # reduz o gap pela metade
+        gap //= 2
 
     return arr, comp, trocas
 
