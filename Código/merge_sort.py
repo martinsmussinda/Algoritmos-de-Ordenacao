@@ -1,32 +1,40 @@
-def merge_sort(vetor):
-    if len(vetor) > 1:
-        meio = len(vetor) // 2
+import time
 
-        esquerda = vetor[:meio]
-        direita = vetor[meio:]
+LISTA = [19, 7, 20, 6, 15, 10, 16, 13, 11, 8, 6, 5]
 
-        merge_sort(esquerda)
-        merge_sort(direita)
+def merge_sort(arr):
+    comp = trocas = [0, 0]
+    print(f"Entrada: {arr}")
 
-        i = j = k = 0
+    def _merge(a):
+        if len(a) > 1:
+            mid = len(a)//2
+            L, R = a[:mid], a[mid:]
+            _merge(L); _merge(R)
+            i=j=k=0
+            while i < len(L) and j < len(R):
+                comp[0] += 1
+                if L[i] <= R[j]:
+                    a[k] = L[i]; i += 1
+                else:
+                    a[k] = R[j]; j += 1
+                k += 1; trocas[0] += 1
+            while i < len(L):
+                a[k] = L[i]; i+=1; k+=1; trocas[0]+=1
+            while j < len(R):
+                a[k] = R[j]; j+=1; k+=1; trocas[0]+=1
+            print(f"Merge: {a}")
+        return a
 
-        while i < len(esquerda) and j < len(direita):
-            if esquerda[i] < direita[j]:
-                vetor[k] = esquerda[i]
-                i += 1
-            else:
-                vetor[k] = direita[j]
-                j += 1
-            k += 1
+    _merge(arr)
+    return arr, comp[0], trocas[0]
 
-        while i < len(esquerda):
-            vetor[k] = esquerda[i]
-            i += 1
-            k += 1
+if __name__ == "__main__":
+    inicio = time.perf_counter()
+    arr = LISTA.copy()
+    resultado, comp, trocas = merge_sort(arr)
+    tempo = (time.perf_counter() - inicio) * 1000
 
-        while j < len(direita):
-            vetor[k] = direita[j]
-            j += 1
-            k += 1
-
-    return vetor
+    print(f"\n**Merge Sort**")
+    print(f"Saída: {resultado}")
+    print(f"Comparações: {comp} | Moves: {trocas} | Tempo: {tempo:.3f}ms")
