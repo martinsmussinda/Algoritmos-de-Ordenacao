@@ -1,4 +1,9 @@
+import random
 import time
+
+#LISTA = [random.randint(1, 20) for _ in range(10)]
+#LISTA = [random.randint(1, 20) for _ in range(100)]
+#LISTA = [random.randint(1, 20) for _ in range(1000)]
 
 LISTA = [19, 7, 20, 6, 15, 10, 16, 13, 11, 8, 6, 5]
 
@@ -36,5 +41,6 @@ if __name__ == "__main__":
     tempo = (time.perf_counter() - inicio) * 1000
 
     print(f"\n**Merge Sort**")
-    print(f"Saída: {resultado}")
-    print(f"Comparações: {comp} | Moves: {trocas} | Tempo: {tempo:.3f}ms")
+    print(f"\nLista original: {LISTA}")
+    print(f"\nSaída: {resultado}")
+    print(f"\nComparações: {comp} | Movimentos: {trocas} | Tempo: {tempo:.3f}ms")
