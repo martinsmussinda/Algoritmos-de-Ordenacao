@@ -3,13 +3,14 @@ import time
 LISTA = [19, 7, 20, 6, 15, 10, 16, 13, 11, 8, 6, 5]
 
 def quick_sort(arr):
-    comp = trocas = [0, 0]
+    comp = [0]
+    trocas = [0]
     print(f"Entrada: {arr}")
 
     def _quick(a):
         if len(a) <= 1: return a
         pivot = a[len(a)//2]
-        left, mid, right = [], []
+        left, mid, right = [], [], []
         for x in a:
             comp[0] += 1
             if x < pivot: left.append(x)
